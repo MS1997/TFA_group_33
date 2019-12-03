@@ -25,8 +25,7 @@ class Squirrel(models.Model):
          choices = SHIFT_CHOICES,
          help_text=_('Squirrel sighting session morning or late afternoon'),
          )
-     Date = models.DateField(
-         max_length=100,
+     Date = models.IntegerField(
          help_text=_('Session of sighting day and month'),
          )
      ADULT='Adult'
