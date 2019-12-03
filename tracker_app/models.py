@@ -1,7 +1,7 @@
 from django.db import models
 
 from django.utils.translation import gettext as _
-                                                                          class squirrel(models.Model):
+class Squirrel(models.Model):
      X = models.FloatField(
          max_length=100,
          help_text=_('Longitude Coordinate for Squirrel sighting point'),
@@ -14,6 +14,8 @@ from django.utils.translation import gettext as _
          max_length=100,
          help_text=_('Identification tag for Squirrel sighting'),
          )
+     AM='AM'
+     PM='PM'
      SHIFT_CHOICES =(
             (AM,'AM'),
             (PM,'PM'),
@@ -27,6 +29,8 @@ from django.utils.translation import gettext as _
          max_length=100,
          help_text=_('Session of sighting day and month'),
          )
+     ADULT='Adult'
+     JUVENILE = 'Juvenile'
      AGE_CHOICES = (
             (ADULT,'Adult'),
             (JUVENILE,'Juvenile'),
@@ -36,84 +40,92 @@ from django.utils.translation import gettext as _
          choices = AGE_CHOICES,
          help_text=_('Value is either adult or juvenile'),
          )
-    COLOR_CHOICES = ((GREY,'Grey'),
+     GREY= 'Grey'
+     CINNAMON= 'Cinnamon'
+     BLACK = 'Black'
+     COLOR_CHOICES = (
+            (GREY,'Grey'),
             (CINNAMON,'Cinnamon'),
             (BLACK,'Black'),
-            )
-    Primary_Fur_Color = models.CharField(
+         )
+     Primary_Fur_Color = models.CharField(
             max_length=100,
             blank=True,
             help_text=_('fur color of squirrel'),
-    )
-    LOCATION_CHOICES =(
+         )
+     GROUND_PLANE = 'Ground Plane'
+     ABOVE_GROUND = 'Above Ground'
+     LOCATION_CHOICES =(
             (GROUND_PLANE,'Ground Plane'),
             (ABOVE_GROUND,'Above Ground'),
             )
-    Location = models.CharField(
+     Location = models.CharField(
             max_length=50,
             choices = LOCATION_CHOICES,
             blank=True,
             help_text=_('sighter instructed squirrel location'),
-    )
-    Specific_Location = models.CharField(
+         )
+     Specific_Location = models.CharField(
             max_length=200,
             blank=True,
             help_text=_('sighter commentary on  squirrel location'),
-    )
-    Running = models.BooleanField(
+         )
+     Running = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen running'),
             )
-    Chasing = models.BooleanField(
+     Chasing = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen chasing'),
             )
-    Climbing = models.BooleanField(
+     Climbing = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen climbing'),
             )
-    Eating = models.BooleanField(
+     Eating = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen eating'),
             )
-    Foraging = models.BooleanField(
+     Foraging = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen foraging for food'),
             )
-    Other_activities = models.CharField(
+     Other_activities = models.CharField(
             max_length=200,
             blank=True,
             help_text=_('no description available '),
-    )
-    Kuks = models.BooleanField(
+           )
+     Kuks = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was heard kukking, a chirpy vocal communication'),
             )
-    Quaas = models.BooleanField(
+     Quaas = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was heard quaaing, an elongated vocal communication'),
             )
-    Moans = models.BooleanField(
+     Moans = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was heard moaning, a high-pitched vocal communication'),
             )
-    Tail_flags = models.BooleanField(
+     Tail_flags = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen flagging its tail'),
             )
-    Tail_twitches = models.BooleanField(
+     Tail_twitches = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen twitching its tail'),
             )
-    Approaches = models.BooleanField(
+     Approaches = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen approaching human, seeking food')
             )
-    Indifferent = models.BooleanField(
+     Indifferent = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was indifferent to human presence'),
             )
-    Runs_From = models.BooleanField(
+     Runs_From = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen running from humans, seeing them as a threat'),
             )
+     def __str__(self):
+         return self.UID
