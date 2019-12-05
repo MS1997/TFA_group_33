@@ -1,4 +1,5 @@
-from django.shortcuts import redirect
+from django.http import HttpResponse
+from django.shortcuts import render,redirect
   
 from .models import Squirrel
 from .forms import SquirrelForm
@@ -17,3 +18,30 @@ def edit_squirrel(request,UID):
             'form':form,
              }
     return render(request, 'tracker_app/edit.html', context)
+
+def add_squirrel(request):
+    if request.method == "POST":
+        form= SquirrelForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(f'/sightings')
+    else:
+        form = SquirrelForm()
+    context ={
+            'form':form,
+        }
+    return render(request,'tracker_app/edit.html',context)
+
+def map_squirrel(request):
+    sightings= Squirrel.objects.all()[:100]
+    context ={
+            'sightings':sightings,
+             }
+    return render(request, 'tracker_app/map.html', context)
+
+def sighting(request):
+    squirrel = Squirrel.objects.all()
+    context = {
+            'squirrels': squirrel,
+        }
+    return render(request, 'tracker_app/sightings.html',context)
