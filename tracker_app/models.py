@@ -10,7 +10,7 @@ class Squirrel(models.Model):
          max_length=100,
          help_text=_('Latitude Coordinate for Squirrel sighting point'),
          )
-     UID = models.CharField(
+     UID= models.CharField(
          max_length=100,
          help_text=_('Identification tag for Squirrel sighting'),
          )
