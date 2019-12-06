@@ -13,6 +13,7 @@ class Squirrel(models.Model):
      UID= models.CharField(
          max_length=100,
          help_text=_('Identification tag for Squirrel sighting'),
+         primary_key= True,
          )
      AM='AM'
      PM='PM'
