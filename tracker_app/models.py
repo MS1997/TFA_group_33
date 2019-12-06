@@ -5,10 +5,15 @@ class Squirrel(models.Model):
      X = models.FloatField(
          max_length=100,
          help_text=_('Longitude Coordinate for Squirrel sighting point'),
+         decimal_places = 15,
+         blank = True,
          )
+
      Y = models.FloatField(
          max_length=100,
          help_text=_('Latitude Coordinate for Squirrel sighting point'),
+         decimal_place = 15,
+         blank = True,
          )
      UID= models.CharField(
          max_length=100,
@@ -23,7 +28,8 @@ class Squirrel(models.Model):
      Shift  = models.CharField(
          max_length=100,
          choices = SHIFT_CHOICES,
-         help_text=_('Squirrel sighting session morning or late afternoon'),
+         help_text=_('Squirrel sighting session morning or late afternoon') ,
+         blank = True,
          )
      Date = models.IntegerField(
          help_text=_('Session of sighting day and month'),
@@ -38,6 +44,7 @@ class Squirrel(models.Model):
          max_length=100,
          choices = AGE_CHOICES,
          help_text=_('Value is either adult or juvenile'),
+         blank = True,
          )
      GREY= 'Grey'
      CINNAMON= 'Cinnamon'
@@ -50,6 +57,7 @@ class Squirrel(models.Model):
      Primary_Fur_Color = models.CharField(
             max_length=100,
             blank=True,
+            choices= COLOR_CHOICES,
             help_text=_('fur color of squirrel'),
          )
      GROUND_PLANE = 'Ground Plane'
@@ -72,22 +80,27 @@ class Squirrel(models.Model):
      Running = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen running'),
+            default = False,
             )
      Chasing = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen chasing'),
+            default = False,
             )
      Climbing = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen climbing'),
+            default= False,
             )
      Eating = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen eating'),
+            default= False,
             )
      Foraging = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen foraging for food'),
+            default = False,
             )
      Other_activities = models.CharField(
             max_length=200,
@@ -97,34 +110,45 @@ class Squirrel(models.Model):
      Kuks = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was heard kukking, a chirpy vocal communication'),
+         
+            dafault = False,
             )
      Quaas = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was heard quaaing, an elongated vocal communication'),
+            default= False,
             )
+
+
      Moans = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was heard moaning, a high-pitched vocal communication'),
+            default = False,
             )
      Tail_flags = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen flagging its tail'),
+            default = False,
             )
      Tail_twitches = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen twitching its tail'),
+            default= False,
             )
      Approaches = models.BooleanField(
             max_length = 10,
-            help_text=_('Squirrel was seen approaching human, seeking food')
+            help_text=_('Squirrel was seen approaching human, seeking food'),
+            default= False,
             )
      Indifferent = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was indifferent to human presence'),
+            default = False,
             )
      Runs_From = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was seen running from humans, seeing them as a threat'),
+            default= False,
             )
      def __str__(self):
          return self.UID
