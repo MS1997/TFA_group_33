@@ -1,6 +1,5 @@
 <ul>
 	{% for squirrel in squirrels %}
-	<li> <a href="<str:UID>/edit"> {{squirrel.UID}} </a> </li>
-	<li></li>
+	<li> <a href="{{squirrel.UID}}"> {{squirrel.UID}} </a> </li>
 	{% endfor %}
 </ul>

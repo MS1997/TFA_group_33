@@ -6,14 +6,14 @@ from .forms import SquirrelForm
 
 # Create your views here.
 def edit_squirrel(request,UID):
-    squirrel= Squirrel.objects.get(id=UID)
+    squirrel= Squirrel.objects.get(UID=UID)
     if request.method =='POST':
         form = SquirrelForm(request.POST, instance = squirrel)
         if form.is_valid():
             form.save()
-            return redirect(f'/tracker_app/{UID}')
+            return redirect(f'/sightings/')
     else:
-        form = SquirelForm(instance=squirrel)
+        form = SquirrelForm(instance=squirrel)
     context ={
             'form':form,
              }
@@ -24,7 +24,7 @@ def add_squirrel(request):
         form= SquirrelForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect(f'/sightings')
+            return redirect(f'/sightings/')
     else:
         form = SquirrelForm()
     context ={
