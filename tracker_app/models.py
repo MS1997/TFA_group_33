@@ -2,18 +2,20 @@ from django.db import models
 
 from django.utils.translation import gettext as _
 class Squirrel(models.Model):
-     X = models.FloatField(
+     X = models.DecimalField(
          max_length=100,
          help_text=_('Longitude Coordinate for Squirrel sighting point'),
-         decimal_places = 15,
          blank = True,
+         max_digits=20,
+         decimal_places = 15,
          )
 
-     Y = models.FloatField(
+     Y = models.DecimalField(
          max_length=100,
          help_text=_('Latitude Coordinate for Squirrel sighting point'),
-         decimal_place = 15,
          blank = True,
+         max_digits=20,
+         decimal_places = 15,
          )
      UID= models.CharField(
          max_length=100,
@@ -29,7 +31,7 @@ class Squirrel(models.Model):
      Shift  = models.CharField(
          max_length=100,
          choices = SHIFT_CHOICES,
-         help_text=_('Squirrel sighting session morning or late afternoon') ,
+         help_text=_('Squirrel sighting session morning or late afternoon'),
          blank = True,
          )
      Date = models.IntegerField(
@@ -111,8 +113,7 @@ class Squirrel(models.Model):
      Kuks = models.BooleanField(
             max_length = 10,
             help_text=_('Squirrel was heard kukking, a chirpy vocal communication'),
-         
-            dafault = False,
+            default = False,
             )
      Quaas = models.BooleanField(
             max_length = 10,
