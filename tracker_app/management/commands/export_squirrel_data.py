@@ -16,6 +16,7 @@ class Command(BaseCommand):
                     dict_['Y'] = i.Y
                     dict_['Shift'] = i.Shift
                     dict_['Date'] = i.Date
+<<<<<<< HEAD
                     dict_['Unique Squirrel ID'] = i.UID              
                     dict_['Age'] = i.Age
                     dict_['Primary Fur Color'] = i.Primary_Fur_Color
@@ -33,6 +34,25 @@ class Command(BaseCommand):
                     dict_['Tail Flags'] = i.Tail_flags                  
                     dict_['Tail Twitches'] = i.Tail_twitches
                     dict_['Approaches'] = i.Approaches 
+=======
+                    dict_['Unique Squirrel ID'] = i.UID                                                     
+                    dict_['Age'] = i.Age
+                    dict_['Primary Fur Color'] = i.Primary_Fur_Color
+                    dict_['Location'] = i.Location                                                              
+                    dict_['Specific Location'] = i.Specific_Location 
+                    dict_['Running'] = i.Running                                                                
+                    dict_['Chasing'] = i.Chasing  
+                    dict_['Climbing'] = i.Climbing 
+                    dict_['Eating'] = i.Eating 
+                    dict_['Foraging'] = i.Foraging                                                              
+                    dict_['Other Activities'] = i.Other_Activities  
+                    dict_['Kuks'] = i.Kuks 
+                    dict_['Quaas'] = i.Quaas
+                    dict_['Moans'] = i.Moans                            
+                    dict_['Tail Flags'] = i.Tail_flags                                                              
+                    dict_['Tail Twitches'] = i.Tail_twitching                                                       
+                    dict_['Approaches'] = i.Approached                                                          
+>>>>>>> 2bbb717e1f5bf24e732d883cf23b4b0ce995b347
                     dict_['Indifferent'] = i.Indifferent 
                     dict_['Runs from'] = i.Runs_From
                     writer = csv.DictWriter(fp,delimiter=",",fieldnames=dict_.keys())
