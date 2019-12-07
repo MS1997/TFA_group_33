@@ -45,8 +45,7 @@ def sighting(request):
             'squirrels': squirrel,
         }
     return render(request, 'tracker_app/sightings.html',context)
-
-<<<<<<< HEAD
+  
 def get_stats(request):
     #squirrel= Squirrel.objects.all()
     AM_count = 0
@@ -56,20 +55,6 @@ def get_stats(request):
     Foraging_count =0
     Climbing_count =0
     for i in Squirrel.objects.all():
-=======
-def squirrel_stats(request):
-    squirrel= Squirrel.objects.all()
-    context ={
-            'squirrels': squirrel
-            }
-    AM_count = 0
-    PM_count = 0
-    Eating_count =0
-    Runing_count =0
-    Foraging_count =0
-    Climbing_count =0
-    for i in squirrel:
->>>>>>> 2bbb717e1f5bf24e732d883cf23b4b0ce995b347
         if i.Shift == 'AM':
             AM_count+=1
         if i.Shift == 'PM':
@@ -83,7 +68,6 @@ def squirrel_stats(request):
         if i.Foraging == True:
             Foraging_count +=1
     context = {
-<<<<<<< HEAD
             'AM_count':AM_count,
             'PM_count':PM_count,
             'Eating_count':Eating_count,
@@ -92,13 +76,4 @@ def squirrel_stats(request):
             'Climbing_count':Climbing_count,
             }
     return render(request, 'tracker_app/stats.html', context)
-=======
-            'AM_count'=AM_count
-            'PM_count'=PM_count
-            'Eating_count'=Eating_count
-            'Running_count'=Running_count
-            'Foraging_count'=Foraging_count
-            'Climbing_count'=Climbing_count
-            }
-    return render(request, 'tracker/stats.html', context)
->>>>>>> 2bbb717e1f5bf24e732d883cf23b4b0ce995b347
+
