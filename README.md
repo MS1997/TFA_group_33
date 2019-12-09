@@ -3,7 +3,7 @@
 This app tracks and maps the squirrel sighting in the Central Park area!!!!! <br> <br>
 
 <b> Overview</b>: <br>
-A web based application keeping track of all known squirrels as per 2018 Central Park Squirrel Census, enabling add, delete, update features. It uses a sqlite3 database to store publicly available squirrel data.
+A web based application keeping track of all known squirrels as per 2018 Central Park Squirrel Census, enabling add, delete, update features.
 <h4>Main Features: </h4>
 1.	Importing data from CSV (squirrel sightings- census data)<br>
 2.	Map that plots sightings <br>
