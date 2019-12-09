@@ -1,6 +1,8 @@
 from django.db import models
 
 from django.utils.translation import gettext as _
+from django.core.validators import MinLengthValidator
+
 class Squirrel(models.Model):
      X = models.DecimalField(
          max_length=100,
@@ -19,6 +21,7 @@ class Squirrel(models.Model):
          )
      UID= models.CharField(
          max_length=100,
+         validators=[MinLengthValidator(10)],
          help_text=_('Identification tag for Squirrel sighting'),
          primary_key= True,
          )

@@ -45,7 +45,10 @@ def sighting(request):
             'squirrels': squirrel,
         }
     return render(request, 'tracker_app/sightings.html',context)
-  
+
+def main(request):
+    return render(request, 'tracker_app/main.html')  
+
 def get_stats(request):
     #squirrel= Squirrel.objects.all()
     AM_count = 0
