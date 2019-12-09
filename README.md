@@ -3,7 +3,7 @@
 This app tracks and maps the squirrel sighting in the Central Park area!!!!! <br> <br>
 
 <b> Overview</b>: <br>
-A web based application keeping track of all known squirrels as per 2018 Central Park Squirrel Census, enabling add, delete, update features.
+A web based application keeping track of all known squirrels as per 2018 Central Park Squirrel Census including add and update features.
 <h4>Main Features: </h4>
 1.	Importing data from CSV (squirrel sightings- census data)<br>
 2.	Map that plots sightings <br>
@@ -17,11 +17,12 @@ A web based application keeping track of all known squirrels as per 2018 Central
 <b>Name of the app:</b> tracker_app <br>
 <b>Name of the project:</b> TFA_group_33 <br>
 <b>Views:</b> <br>
-  1. Sightings (/sighting): A view that lists all squirrel sightings with links to edit:<br>
+  1. Main page of the app
+  2. Sightings (/sighting): A view that lists all squirrel sightings with links to edit:<br>
         -	update a particular sighting (/sightings/<unique-squirrel-id>)<br>
         -	create a new sighting (/sightings/add)<br>
-  2.	Map (/map): A view that shows a map that displays the location of the squirrel sightings<br>
-  3.	Stats (/stats): A view with interesting stats about the squirrel sightings <br>
+  3.	Map (/map): A view that shows a map that displays the location of the squirrel sightings<br>
+  4.	Stats (/sightings/stats): A view with interesting stats about the squirrel sightings <br>
 <b>Management commands:</b> <br>
   1.	Import (import_squirrel_data): To import the data from the 2018 census file (in CSV format)<br>
   2.	Export (export_squirrel_data) : To export the squirrel data in CSV format<br>
